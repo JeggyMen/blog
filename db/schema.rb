@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_02_100310) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_05_120243) do
+  create_table "animes", force: :cascade do |t|
+    t.string "title"
+    t.string "main_character"
+    t.integer "year_created"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "articles", force: :cascade do |t|
     t.string "name"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.string "food_name"
+    t.string "origin"
+    t.text "ingredients"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

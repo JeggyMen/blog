@@ -6,10 +6,25 @@ class ArticlesController < ApplicationController
         
     def new
         # display a form where you can add an article
+        @article = Article.new
     end
 
     def create
         # create article (thru model/activerecord)
+        @article = Article.new(article_params)
+
+        if @article.save
+            redirect_to articles_path
+        else
+          render :new
+        end
+    end
+
+    private
+
+    def article_params
+        params.require(:article).permit(:name, :body)
+        end
     end
 
     def edit
@@ -23,4 +38,3 @@ class ArticlesController < ApplicationController
     def delete
         #delte article (thru model/activerecord)
     end
-end

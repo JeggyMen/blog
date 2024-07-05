@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :menus
+  resources :animes
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
 
@@ -10,4 +12,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   #root article #index
   get '/articles' => 'articles#index'
+  get '/articles/new' => 'articles#new', as: 'new_article'
+  post '/articles' => 'articles#create', as: 'create_article'
 end
