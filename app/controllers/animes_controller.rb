@@ -34,7 +34,7 @@ class AnimesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /animes/1 or /animes/1.json
+  
   def update
     respond_to do |format|
       if @anime.update(anime_params)
@@ -47,7 +47,7 @@ class AnimesController < ApplicationController
     end
   end
 
-  # DELETE /animes/1 or /animes/1.json
+ 
   def destroy
     @anime.destroy!
 
@@ -58,12 +58,12 @@ class AnimesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    
     def set_anime
       @anime = Anime.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+   
     def anime_params
       params.require(:anime).permit(:title, :main_character, :year_created)
     end

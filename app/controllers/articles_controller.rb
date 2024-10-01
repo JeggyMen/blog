@@ -1,16 +1,16 @@
 class ArticlesController < ApplicationController
     def index
-        #list all articles
+        
         @articles = Article.all 
     end
         
     def new
-        # display a form where you can add an article
+       
         @article = Article.new
     end
 
     def create
-        # create article (thru model/activerecord)
+       
         @article = Article.new(article_params)
 
         if @article.save
@@ -28,13 +28,13 @@ class ArticlesController < ApplicationController
     end
 
     def edit
-        #display a form where you can edit an article
+        
     end
 
     def updated
-        #update article (thru model/activerecord)
+       
     end
 
     def delete
-        #delte article (thru model/activerecord)
+        
     end
